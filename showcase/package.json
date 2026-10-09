@@ -1,0 +1,7 @@
+{
+  "name": "jup-resolve-showcase",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/presentation.test.js"
+  }
+}

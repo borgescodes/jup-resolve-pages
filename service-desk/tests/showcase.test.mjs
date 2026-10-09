@@ -1,0 +1,135 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import * as solutions from '../src/solutions.mjs';
+import { renderAppHeader, renderJupWorkspace } from '../src/components.mjs';
+import { renderApprovedKnowledgeBody } from '../src/knowledge_content.mjs';
+
+test('topic-only search requests results and cannot leak a previous topic', async t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const calls = [], updates = [];
+  const search = solutions.createFaqSearch({ request: path => new Promise(resolve => calls.push({ path, resolve })), update: value => updates.push(value) });
+  search.input('', 'rede-internet'); t.mock.timers.tick(140);
+  assert.equal(calls.length, 1);
+  search.input('Outlook', 'impressao-office-aplicativos');
+  calls[0].resolve({ items: [{ title: 'Rede' }] }); await Promise.resolve();
+  assert.equal(updates.at(-1).searching, true);
+  t.mock.timers.tick(140);
+  calls[1].resolve({ items: [{ title: 'Outlook' }] }); await Promise.resolve();
+  assert.deepEqual(updates.at(-1).searchResults, [{ title: 'Outlook' }]);
+});
+
+test('filtered results show only response items and empty search offers editable draft', () => {
+  const html = solutions.renderSolutionsResults({ category: 'acessos-rotinas', searchResults: [{ knowledge_id: 'KB-SYN-FAQ-PORTAL-REQUEST-001', title: 'PORTAL', category: 'Acessos e rotinas' }], groups: [{ label: 'Old', items: [{ title: 'Outlook' }] }] });
+  assert.match(html, /Portal de Serviços/); assert.doesNotMatch(html, /Outlook/);
+  const empty = solutions.renderSolutionsResults({ searchQuery: 'zzzz', searchResults: [] });
+  assert.match(empty, /Falar com o Jup/); assert.match(empty, /draft=zzzz/);
+});
+
+test('demo scenarios are drafts with no official knowledge identifiers', () => {
+  const html = solutions.renderDemoScenarios();
+  assert.match(html, /Experimente com o Jup/);
+  assert.match(html, /\/jup\?draft=/);
+  assert.doesNotMatch(html, /knowledge_id|data-knowledge-id|data-solution-link/);
+});
+
+test('conversation owns contextual avatars and thinking message with three dots', () => {
+  const html = renderJupWorkspace({ messages: [{ role: 'USER', text: 'Olá' }, { role: 'JUP', text: 'Olá, como posso ajudar?' }], loading: true });
+  assert.match(html, /conversation-message--user/);
+  assert.match(html, /conversation-message--jup[^]*?jup-avatar/);
+  assert.doesNotMatch(html, /conversation-visual|jup-welcome/);
+  assert.match(html, /conversation-message--thinking[^]*?data-state="thinking"/);
+  assert.match(html, /thinking-dots[^]*?<span><\/span><span><\/span><span><\/span>/);
+  assert.match(html, /data-action="scroll-bottom"/);
+  assert.match(html, /<textarea[^>]*disabled/);
+});
+
+test('backend emotes and request context remain attached to their own messages', () => {
+  const html = renderJupWorkspace({ messages: [
+    { role: 'JUP', text: 'Negado.', status: 'DENIED_POLICY' },
+    { role: 'JUP', text: 'Encaminhado.', status: 'SUPPORT_HANDOFF_PENDING', context: { system: 'PORTAL', next_step: 'Aguardando aprovação' } },
+  ] });
+  assert.match(html, /data-state="warning"/);
+  assert.match(html, /data-state="escalation"/);
+  assert.match(html, /Encaminhado\.[^]*?request-context[^]*?Aguardando aprovação[^]*?<\/article>/);
+});
+
+test('composer renders a draft as escaped text without starting a pending message', () => {
+  const html = renderJupWorkspace({ draft: 'Preciso de acesso <PORTAL>' });
+  assert.match(html, /<textarea[^>]*>Preciso de acesso &lt;PORTAL&gt;<\/textarea>/);
+  assert.doesNotMatch(html, /conversation-message--thinking/);
+});
+
+test('fictitious portal procedures never create an external action link', () => {
+  const text = '1. Solicite acesso no ambiente fictício.\n2. Acompanhe o andamento.';
+  for (const options of [{ procedureUrl: 'https://portal.example.invalid/' }, { procedureUrl: null }]) {
+    const html = renderApprovedKnowledgeBody({ text, ...options, knowledgeId: 'KB-SYN-FAQ-PORTAL-REQUEST-001' });
+    assert.doesNotMatch(html, /<a /);
+    assert.match(html, /ambiente fictício/);
+  }
+});
+
+test('Jup desktop workspace has product frame and composer without permanent hero', () => {
+  const html = renderJupWorkspace({ messages: [{ role: 'USER', text: 'Preciso de acesso ao PORTAL' }, { role: 'JUP', text: 'Posso ajudar com isso.' }] });
+  assert.match(html, /class="jup-workspace-frame"/);
+  assert.doesNotMatch(html, /class="conversation-status"/);
+  assert.match(html, /class="conversation-stage"/);
+  assert.match(html, /class="composer-leading-icon"/);
+  assert.match(html, /class="composer-hint"/);
+});
+
+test('one visual foundation is loaded together with the original animated avatar', () => {
+  const html = readFileSync(new URL('../src/index.html', import.meta.url), 'utf8');
+  assert.match(html, /href="\/tokens.css"/);
+  assert.match(html, /href="\/styles.css"/);
+  assert.match(html, /href="\/desktop-responsive.css"/);
+  assert.match(html, /src="\/ui-polish.mjs"/);
+  assert.match(html, /href="\/assets\/jup\/jup-avatar.css"/);
+  assert.doesNotMatch(html, /premium.css|showcase-desktop.css/);
+});
+
+test('FAQ accordion is independent, animated and catalog rows do not expose demo labels', () => {
+  const html = solutions.renderSolutionsHome({
+    groups: [{ items: [{ knowledge_id: 'KB-SYN-FAQ-PORTAL-REQUEST-001' }] }],
+    searchQuery: '',
+    searchResults: null,
+    searching: false,
+  });
+  assert.doesNotMatch(html, /name="support-faq"/);
+  assert.match(html, /class="faq-category-panel"/);
+  assert.doesNotMatch(html, /Exemplo visual/);
+  assert.match(html, /Como acompanhar acesso aprovado no portal[^]*?class="solution-arrow"/);
+});
+
+test('Jup contextual sidebar keeps only new conversation and request tracking', () => {
+  const html = renderAppHeader({ activeRoute: 'jup', identity: { name: 'Usuário Demo' } });
+  assert.match(html, /Nova conversa/);
+  assert.match(html, /Minhas solicitações/);
+  assert.doesNotMatch(html, /Artigos de ajuda/);
+});
+
+test('welcome has authored reveal lines and draft content switches the welcome avatar to listening', () => {
+  const idle = renderJupWorkspace({ draft: '' });
+  const listening = renderJupWorkspace({ draft: 'oi' });
+  assert.match(idle, /welcome-line--greeting/);
+  assert.match(idle, /welcome-line--question/);
+  assert.doesNotMatch(idle, /chat-welcome-tagline/);
+  assert.match(idle, /data-listening="false"/);
+  assert.match(idle, /chat-welcome[^]*?data-state="idle"/);
+  assert.match(listening, /data-listening="true"/);
+  assert.match(listening, /chat-welcome[^]*?data-state="listening"/);
+});
+
+test('desktop shell uses one branded minimal scrollbar across document and overflow surfaces', () => {
+  const baseCss = readFileSync(new URL('../src/styles.css', import.meta.url), 'utf8');
+  const responsiveCss = readFileSync(new URL('../src/desktop-responsive.css', import.meta.url), 'utf8');
+  const css = `${baseCss}\n${responsiveCss}`;
+  assert.match(css, /scrollbar-gutter:\s*stable/);
+  assert.doesNotMatch(css, /body:has\(\.solutions-home\)[^}]*overflow:\s*hidden/);
+  assert.match(css, /\*\s*\{[^}]*scrollbar-width:\s*thin[^}]*scrollbar-color:/);
+  assert.match(css, /\*::\-webkit-scrollbar\s*\{/);
+  assert.match(css, /\*::\-webkit-scrollbar-thumb\s*\{/);
+  assert.match(css, /\.jup-surface\s*\{[^}]*height:\s*calc\(100dvh - var\(--header-height\)\)[^}]*min-height:\s*0/);
+  assert.match(css, /\.jup-workspace-body,\s*\.conversation-stage,\s*\.jup-conversation\s*\{[^}]*min-height:\s*0/);
+  assert.match(css, /\.welcome-line/);
+});
