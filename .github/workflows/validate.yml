@@ -59,7 +59,7 @@ jobs:
           path: artifacts/
   deploy:
     needs: validate
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && vars.PUBLICATION_AUTHORIZED == 'true'
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && vars.PUBLICATION_AUTHORIZED == 'true' && vars.PRIVATE_AUDIT_APPROVED_SHA == github.sha
     runs-on: ubuntu-latest
     environment: github-pages
     permissions:
@@ -68,6 +68,17 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
+      - name: Verify audited SHA and publication authorization
+        shell: bash
+        env:
+          PUBLICATION_FLAG: ${{ vars.PUBLICATION_AUTHORIZED }}
+          PRIVATE_AUDIT_SHA: ${{ vars.PRIVATE_AUDIT_APPROVED_SHA }}
+          CURRENT_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test "$PUBLICATION_FLAG" = "true"
+          test -n "$PRIVATE_AUDIT_SHA"
+          test "$PRIVATE_AUDIT_SHA" = "$CURRENT_SHA"
       - uses: actions/setup-node@v4
         with:
           node-version: '24'

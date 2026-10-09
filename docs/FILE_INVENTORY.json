@@ -9,8 +9,8 @@
     },
     {
       "path": ".github/workflows/validate.yml",
-      "bytes": 3212,
-      "sha256": "6ace0dd00879c7efedb8bbf069b6dfcd448e0598f92af80fd75e7475eccf3901"
+      "bytes": 3708,
+      "sha256": "4d1e72df76563fbc24c59fd2b85864919989e605ac1f4d48963a5cdc9cacbe72"
     },
     {
       "path": ".gitignore",
@@ -36,6 +36,11 @@
       "path": "docs/LICENSES.md",
       "bytes": 1832,
       "sha256": "525147b12278d52e15d8bd716098b25813c27d404e3e47fe925cf7c4ba69bcd7"
+    },
+    {
+      "path": "docs/RELEASE_GATE.md",
+      "bytes": 1830,
+      "sha256": "f8ef90118a9729522f5a52d35cdb94578bf601f6717af52e43644c974702eb1f"
     },
     {
       "path": "docs/RELEASE_VALIDATION.md",
@@ -351,6 +356,11 @@
       "path": "scripts/tests/privacy-scan.test.mjs",
       "bytes": 3531,
       "sha256": "031f66ba7963377498da23c16c31b196fed8097991df36ade445b78f6a29f460"
+    },
+    {
+      "path": "scripts/tests/release-deploy-gate.test.mjs",
+      "bytes": 991,
+      "sha256": "bf051bf23261c33c7d44f45924ffcf304a11d3e96622c715dca3ae57734715ca"
     },
     {
       "path": "scripts/tests/release-rights.test.mjs",
