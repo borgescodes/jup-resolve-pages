@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "binaryMetadataFindings": 0,
+  "privateNegativeRegressionCases": 138,
+  "termsDisclosed": false
+}

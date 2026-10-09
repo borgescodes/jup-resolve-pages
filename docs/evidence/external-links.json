@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "url": "https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "url": "https://github.com/borgescodes/jup-resolve-pages",
+    "status": "authenticated-private-repository",
+    "ok": true
+  },
+  {
+    "url": "https://github.com/google/fonts/tree/main/ofl/oxanium",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "url": "https://github.com/sevmeyer/oxanium",
+    "status": 200,
+    "ok": true
+  },
+  {
+    "url": "https://support.microsoft.com/en-us/accounts-billing/work-school/change-your-work-or-school-account-password",
+    "status": 200,
+    "ok": true
+  }
+]

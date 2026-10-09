@@ -1,0 +1,13 @@
+{
+  "name": "jup-resolve-pages",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/tests/*.test.mjs && node --test showcase/tests/*.test.js && npm test --prefix service-desk",
+    "lint": "npm run lint --prefix service-desk",
+    "build": "node scripts/build.mjs",
+    "smoke": "node scripts/smoke-pages.mjs",
+    "audit:privacy": "node scripts/privacy-scan.mjs --tracked dist"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}

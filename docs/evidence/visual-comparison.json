@@ -1,0 +1,146 @@
+[
+  {
+    "capture": "showcase-scene-1-1440.png",
+    "differentPixelsAbove10": 793,
+    "totalPixels": 1296000,
+    "fraction": 0.0006118827160493827
+  },
+  {
+    "capture": "showcase-scene-2-1440.png",
+    "differentPixelsAbove10": 1086,
+    "totalPixels": 1296000,
+    "fraction": 0.000837962962962963
+  },
+  {
+    "capture": "showcase-scene-3-1440.png",
+    "differentPixelsAbove10": 2458,
+    "totalPixels": 1296000,
+    "fraction": 0.001896604938271605
+  },
+  {
+    "capture": "showcase-scene-4-1440.png",
+    "differentPixelsAbove10": 1671,
+    "totalPixels": 1296000,
+    "fraction": 0.0012893518518518519
+  },
+  {
+    "capture": "showcase-scene-5-1440.png",
+    "differentPixelsAbove10": 637,
+    "totalPixels": 1296000,
+    "fraction": 0.0004915123456790124
+  },
+  {
+    "capture": "showcase-scene-6-1440.png",
+    "differentPixelsAbove10": 769,
+    "totalPixels": 1296000,
+    "fraction": 0.0005933641975308641
+  },
+  {
+    "capture": "showcase-scene-7-1440.png",
+    "differentPixelsAbove10": 769,
+    "totalPixels": 1296000,
+    "fraction": 0.0005933641975308641
+  },
+  {
+    "capture": "showcase-scene-8-1440.png",
+    "differentPixelsAbove10": 0,
+    "totalPixels": 1296000,
+    "fraction": 0.0
+  },
+  {
+    "capture": "showcase-scene-1-768.png",
+    "differentPixelsAbove10": 277,
+    "totalPixels": 691200,
+    "fraction": 0.00040075231481481483
+  },
+  {
+    "capture": "showcase-scene-2-768.png",
+    "differentPixelsAbove10": 871,
+    "totalPixels": 691200,
+    "fraction": 0.0012601273148148148
+  },
+  {
+    "capture": "showcase-scene-3-768.png",
+    "differentPixelsAbove10": 649,
+    "totalPixels": 691200,
+    "fraction": 0.0009389467592592593
+  },
+  {
+    "capture": "showcase-scene-4-768.png",
+    "differentPixelsAbove10": 616,
+    "totalPixels": 691200,
+    "fraction": 0.0008912037037037037
+  },
+  {
+    "capture": "showcase-scene-5-768.png",
+    "differentPixelsAbove10": 139,
+    "totalPixels": 691200,
+    "fraction": 0.00020109953703703704
+  },
+  {
+    "capture": "showcase-scene-6-768.png",
+    "differentPixelsAbove10": 216,
+    "totalPixels": 691200,
+    "fraction": 0.0003125
+  },
+  {
+    "capture": "showcase-scene-7-768.png",
+    "differentPixelsAbove10": 294,
+    "totalPixels": 691200,
+    "fraction": 0.0004253472222222222
+  },
+  {
+    "capture": "showcase-scene-8-768.png",
+    "differentPixelsAbove10": 0,
+    "totalPixels": 691200,
+    "fraction": 0.0
+  },
+  {
+    "capture": "showcase-scene-1-390.png",
+    "differentPixelsAbove10": 68,
+    "totalPixels": 329160,
+    "fraction": 0.00020658646251063312
+  },
+  {
+    "capture": "showcase-scene-2-390.png",
+    "differentPixelsAbove10": 56,
+    "totalPixels": 329160,
+    "fraction": 0.00017013002794993317
+  },
+  {
+    "capture": "showcase-scene-3-390.png",
+    "differentPixelsAbove10": 151,
+    "totalPixels": 329160,
+    "fraction": 0.0004587434682221412
+  },
+  {
+    "capture": "showcase-scene-4-390.png",
+    "differentPixelsAbove10": 139,
+    "totalPixels": 329160,
+    "fraction": 0.00042228703366144123
+  },
+  {
+    "capture": "showcase-scene-5-390.png",
+    "differentPixelsAbove10": 21,
+    "totalPixels": 329160,
+    "fraction": 6.379876048122494e-05
+  },
+  {
+    "capture": "showcase-scene-6-390.png",
+    "differentPixelsAbove10": 34,
+    "totalPixels": 329160,
+    "fraction": 0.00010329323125531656
+  },
+  {
+    "capture": "showcase-scene-7-390.png",
+    "differentPixelsAbove10": 54,
+    "totalPixels": 329160,
+    "fraction": 0.00016405395552314983
+  },
+  {
+    "capture": "showcase-scene-8-390.png",
+    "differentPixelsAbove10": 0,
+    "totalPixels": 329160,
+    "fraction": 0.0
+  }
+]

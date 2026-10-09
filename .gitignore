@@ -1,0 +1,9 @@
+node_modules/
+dist/
+service-desk/dist/
+service-desk/pages-dist/
+.env
+.env.*
+!.env.example
+.source/
+artifacts/
