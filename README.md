@@ -39,6 +39,12 @@ Ela não está disponível no CI público. Não se afirma equivalência de cober
 
 Oxanium local e contornos vetoriais derivados: SIL OFL 1.1, com atribuição junto aos arquivos. Montserrat e Inter: OFL. Ícones: licença MIT do Boxicons. Mascote e ilustrações de demonstração são preservados; veja o inventário e os limites de comprovação em [validação](docs/RELEASE_VALIDATION.md).
 
+## Licenca do codigo e direitos da marca
+
+O codigo e a documentacao autorais deste projeto estao sob a [licenca MIT](LICENSE). Essa permissao **nao inclui** nome, logotipos, mascote, ilustracoes, GIF/WebP, favicon ou capturas da identidade Jup Resolve, que permanecem com [direitos reservados](docs/ASSET_RIGHTS.md). A exibicao publica de imagens foi autorizada pelo responsavel para uso nas demonstracoes, sem concessao de licenca geral de reutilizacao.
+
+Fontes, bibliotecas e icones de terceiros mantem suas licencas e avisos especificos em [docs/LICENSES.md](docs/LICENSES.md). Direitos de imagem e cadeia documental de titularidade nao foram independentemente comprovados.
+
 ## Controles de publicação
 
 Preparação privada, PR draft, sem merge ou Pages ativo. Deploy exige execução manual em `main` e autorização futura registrada pela variável `PUBLICATION_AUTHORIZED=true`. Esse controle permanece desabilitado nesta preparação. Revisão humana decide exposição pública e direitos dos assets.

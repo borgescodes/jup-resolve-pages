@@ -45,13 +45,13 @@ Raiz vazia nova, snapshot novo e documentação nova. Único remoto é o destino
 
 `LICENSES.md`: Oxanium e SVGs derivados OFL, Montserrat OFL, Inter OFL, JetBrains Mono embutida OFL, Boxicons MIT e GSAP Standard No Charge com avisos preservados. Imagens, fontes, metadados e favicon inspecionados; binários preservados.
 
-- Mascote, laptop e ilustrações próprias exigem comprovação humana de direitos antes da exposição; a baseline não fornece licença independente desses assets.
-- Nenhuma nova licença geral de código foi concedida nesta preparação.
+- O responsável confirmou em 2026-10-09 autorização para publicar mascote e ilustrações **nas demonstrações**, com identidade visual e imagens sob direitos reservados. Declaração registrada; comprovação documental independente e eventuais direitos de terceiros não foram apresentados.
+- Licença MIT aprovada para código e documentação autorais. O escopo está delimitado em `LICENSE`, `ASSET_RIGHTS.md` e `LICENSES.md`. Marca, imagens e componentes de terceiros permanecem fora da concessão MIT.
 - Inspeção visual e metadados não equivalem a OCR exaustivo de todos os frames animados.
 - Normalização não interpreta programas JavaScript arbitrários nem todos os confusables Unicode.
 - Showcase depende de CDNs públicos para Montserrat/Boxicons; suporte usa recursos locais.
-- CI verde no SHA final, revisão do PR e direitos dos assets são gates obrigatórios para qualquer decisão posterior de publicação.
+- CI verde no SHA final, auditoria institucional privada renovada, verificação da cadeia de direitos dos assets e autorização explícita de publicação permanecem gates obrigatórios.
 
 ## Controles
 
-Destino privado, PR draft, sem merge ou Pages ativo. Deploy exige `workflow_dispatch`, `main` e `PUBLICATION_AUTHORIZED=true`, não configurada nesta preparação. Revisão humana futura decide exposição e autorização. PRs anteriores permanecem intactos.
+Destino privado, PR draft, sem merge ou Pages ativo. Deploy exige `workflow_dispatch`, `main` e `PUBLICATION_AUTHORIZED=true`, não configurada nesta preparação. Aprovação de licença e exibição de artes **não** autoriza merge, deploy nem mudança de visibilidade. Auditoria privada deve ser reexecutada no SHA definitivo, fora do CI público. PRs anteriores permanecem intactos.

@@ -18,19 +18,29 @@
       "sha256": "e81ffdeffea85afe9121432ee8c7153977e3a7ef34f71f71075e5260fe73fb19"
     },
     {
+      "path": "LICENSE",
+      "bytes": 1523,
+      "sha256": "88e412b55006eeada9c6020e9cf234c549ef58f7229026c0f6310f4a5a76d520"
+    },
+    {
       "path": "README.md",
-      "bytes": 2482,
-      "sha256": "711e6746878a23ddeed1a6e877195a108ae3baa43c921170d80eb046e2dfc9ca"
+      "bytes": 3160,
+      "sha256": "ba91dbf10960052b8d7eb8a5e477c3b6dfbbf27f073875e6dec746c83dfa5614"
+    },
+    {
+      "path": "docs/ASSET_RIGHTS.md",
+      "bytes": 2475,
+      "sha256": "940f98bfefe22ad724a5e847e13a88320246d45257de8a49b1c24892db77adc3"
     },
     {
       "path": "docs/LICENSES.md",
-      "bytes": 1384,
-      "sha256": "9d199bbd64ad20e526ee572ac80cdf60a118d3b88e3537e2bbd6b098e9f86a44"
+      "bytes": 1832,
+      "sha256": "525147b12278d52e15d8bd716098b25813c27d404e3e47fe925cf7c4ba69bcd7"
     },
     {
       "path": "docs/RELEASE_VALIDATION.md",
-      "bytes": 5668,
-      "sha256": "4adc762532c5495fd478fcd336b207d9a27ef62e905ca90b6234257d8b08dd5e"
+      "bytes": 6119,
+      "sha256": "7160721d4788e76dbb1e91344420459ea9a0a81b539ddb36142653ade1ed0ed5"
     },
     {
       "path": "docs/evidence/ancestry-summary.json",
@@ -341,6 +351,11 @@
       "path": "scripts/tests/privacy-scan.test.mjs",
       "bytes": 3531,
       "sha256": "031f66ba7963377498da23c16c31b196fed8097991df36ade445b78f6a29f460"
+    },
+    {
+      "path": "scripts/tests/release-rights.test.mjs",
+      "bytes": 2083,
+      "sha256": "d906187ee1924a5d9e5112769240979a2c48dedc71936c7db7b89b4391d037e1"
     },
     {
       "path": "service-desk/README.md",
