@@ -14,7 +14,8 @@ A confirmacao foi declarada no processo de revisao; **nao constitui comprovacao 
 - `service-desk/src/assets/brand/jup-ico.png`
 - `service-desk/src/assets/brand/jup-resolve-logo.svg` e `jup-tagline.svg` (composicao de marca)
 - `service-desk/src/assets/jup/jup-no-face.png`
-- `showcase/site/assets/avatar/*.webp`
+- `showcase/site/assets/avatar/jup-avatar-motion.webp`
+- `showcase/site/assets/avatar/jup-cover-avatar.webp`
 - `showcase/site/assets/scene-05/laptop.png`
 - `showcase/site/assets/brand/*.svg` (composicoes de marca)
 - `showcase/site/jup-ico.png`
