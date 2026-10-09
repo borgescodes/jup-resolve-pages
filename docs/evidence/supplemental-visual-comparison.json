@@ -1,0 +1,87 @@
+[
+  {
+    "capture": "architecture-detail.png",
+    "differentPixelFraction": 0.0,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "architecture-direct-link.png",
+    "differentPixelFraction": 0.0005956790123456791,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "faq-detail.png",
+    "differentPixelFraction": 0.0,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "identity-isolation.png",
+    "differentPixelFraction": 0.0,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "request-approved.png",
+    "differentPixelFraction": 0.0005748456790123456,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "request-created.png",
+    "differentPixelFraction": 6.25e-05,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "request-rejected.png",
+    "differentPixelFraction": 0.0008572530864197531,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "service-desk-1440.png",
+    "differentPixelFraction": 0.0,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "service-desk-390.png",
+    "differentPixelFraction": 0.0,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "service-desk-768.png",
+    "differentPixelFraction": 0.0,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "service-desk-desktop.png",
+    "differentPixelFraction": 0.0,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "showcase-1440.png",
+    "differentPixelFraction": 0.0006103395061728395,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "showcase-390.png",
+    "differentPixelFraction": 0.00020354842629724147,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "showcase-768.png",
+    "differentPixelFraction": 0.0006958912037037037,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "showcase-desktop.png",
+    "differentPixelFraction": 0.001037037037037037,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "showcase-embedded-demo.png",
+    "differentPixelFraction": 0.0005563271604938271,
+    "sizeMismatch": false
+  },
+  {
+    "capture": "timeline.png",
+    "differentPixelFraction": 0.00029783950617283953,
+    "sizeMismatch": false
+  }
+]

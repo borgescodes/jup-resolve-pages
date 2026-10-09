@@ -29,8 +29,8 @@
     },
     {
       "path": "docs/RELEASE_VALIDATION.md",
-      "bytes": 5335,
-      "sha256": "43241086cd8eb8a1d79535d5a50b48e6ac0bd930a0b900dec001970d0bf8f8f8"
+      "bytes": 5668,
+      "sha256": "4adc762532c5495fd478fcd336b207d9a27ef62e905ca90b6234257d8b08dd5e"
     },
     {
       "path": "docs/evidence/ancestry-summary.json",
@@ -61,6 +61,11 @@
       "path": "docs/evidence/gitleaks-summary.json",
       "bytes": 132,
       "sha256": "d185013fa983b303e8807f737c98fdc83d3ae349474fe6b69fa8e868f60e2d32"
+    },
+    {
+      "path": "docs/evidence/history-private-audit-summary.json",
+      "bytes": 144,
+      "sha256": "100ab06b4d0d9290c9996d2d8d3f1bd8fd17a54826531b570809080c012ab2a3"
     },
     {
       "path": "docs/evidence/identity-isolation.png",
@@ -256,6 +261,11 @@
       "path": "docs/evidence/smoke-report.json",
       "bytes": 1847,
       "sha256": "cd2f7a99120e9d7848228a680c518621fa9f021c59edc82797b236a523b14e25"
+    },
+    {
+      "path": "docs/evidence/supplemental-visual-comparison.json",
+      "bytes": 2021,
+      "sha256": "d7272bf2b715655432f148c42dd0eaf540f7cb8ecc7b82290709dc59af1cbb86"
     },
     {
       "path": "docs/evidence/timeline.png",

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "newCommits": 3,
+  "uniqueTextBlobs": 109,
+  "findings": 0,
+  "sourceCommitIntersection": 0,
+  "termsDisclosed": false
+}
