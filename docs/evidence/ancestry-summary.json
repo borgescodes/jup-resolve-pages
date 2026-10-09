@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "sourceCommitIntersection": 0,
+  "independentRoots": [
+    "750f07dc5a5dca8d7d8c1ba7e63f8f8efd0b6179"
+  ],
+  "newCommitsAtSnapshot": 2,
+  "refsAtSnapshot": [
+    "refs/heads/main 750f07dc5a5dca8d7d8c1ba7e63f8f8efd0b6179",
+    "refs/heads/release/clean-snapshot 415c7585e9e6f8ed2d99e36e856d39cf6e8c3da9"
+  ],
+  "onlyDestinationRemote": true,
+  "importedGitMetadata": false
+}
