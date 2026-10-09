@@ -25,9 +25,17 @@ jobs:
       - run: npm ci --prefix service-desk
       - run: mkdir -p artifacts
       - run: npm run lint
-      - run: npm test | tee artifacts/tests.log
+      - name: Test suite (fail closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm test | tee artifacts/tests.log
       - run: npm run build
-      - run: npm run audit:privacy | tee artifacts/privacy.log
+      - name: Privacy audit (fail closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run audit:privacy | tee artifacts/privacy.log
       - name: Gitleaks tree, build and all new history
         shell: bash
         run: |
@@ -66,7 +74,12 @@ jobs:
       - run: npm ci
       - run: npm ci --prefix service-desk
       - run: npm run build
-      - run: npm run audit:privacy | tee artifacts/privacy.log
+      - name: Pre-deploy privacy audit (fail closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          npm run audit:privacy | tee artifacts/privacy.log
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
